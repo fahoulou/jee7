@@ -13,9 +13,11 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+import com.fab.chapter3.constraint.validator.ZipCodeValidator;
+
 @Target({ANNOTATION_TYPE, CONSTRUCTOR, FIELD, METHOD, PARAMETER})
 @Retention(RUNTIME)
-@Constraint(validatedBy = {})
+@Constraint(validatedBy = {ZipCodeValidator.class})
 public @interface ZipCode {
 	String message() default "{com.fab.chapter3.constraint.ZipCode.message}";
 	
