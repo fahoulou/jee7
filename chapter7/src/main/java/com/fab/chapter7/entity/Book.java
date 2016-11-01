@@ -17,9 +17,10 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = -6173023824499693161L;
 	public static final String FIND_ALL = "Book.findAllBooks";
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private Long id;
-	
+
 	@NotNull
 	@Column(nullable = false)
 	private String title;
@@ -30,8 +31,17 @@ public class Book implements Serializable {
 	private String isbn;
 	private Integer nbOfPage;
 	private Boolean illustrations;
-	
+
 	public Book() {
+	}
+
+	public Book(String title, Float price, String description, String isbn, Integer nbOfPage, Boolean illustrations) {
+		this.title = title;
+		this.price = price;
+		this.description = description;
+		this.isbn = isbn;
+		this.nbOfPage = nbOfPage;
+		this.illustrations = illustrations;
 	}
 
 	/**
@@ -62,7 +72,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -76,7 +87,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param title
+	 *            the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
@@ -90,7 +102,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param price the price to set
+	 * @param price
+	 *            the price to set
 	 */
 	public void setPrice(Float price) {
 		this.price = price;
@@ -104,7 +117,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -118,7 +132,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param isbn the isbn to set
+	 * @param isbn
+	 *            the isbn to set
 	 */
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
@@ -132,7 +147,8 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param nbOfPage the nbOfPage to set
+	 * @param nbOfPage
+	 *            the nbOfPage to set
 	 */
 	public void setNbOfPage(Integer nbOfPage) {
 		this.nbOfPage = nbOfPage;
@@ -146,13 +162,16 @@ public class Book implements Serializable {
 	}
 
 	/**
-	 * @param illustrations the illustrations to set
+	 * @param illustrations
+	 *            the illustrations to set
 	 */
 	public void setIllustrations(Boolean illustrations) {
 		this.illustrations = illustrations;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -169,7 +188,9 @@ public class Book implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -236,7 +257,9 @@ public class Book implements Serializable {
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
